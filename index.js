@@ -5,7 +5,7 @@ const args = require("minimist")(process.argv.slice(2));
 
 let homeContent = "";
 let projectContent = "";
-let Registration="";
+let registrationContent="";
 
 
 
@@ -26,7 +26,7 @@ fs.readFile("registration.html", (err, Register) => {
   if (err) {
     throw err;
   }
-  Registration = Register;
+  registrationContent = Register;
 });
 
 
@@ -40,7 +40,7 @@ http
         response.end();
         break;
         case "/registration":
-          response.write(Registration);
+          response.write(registrationContent);
           response.end();
           break; 
       default:
